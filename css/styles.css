@@ -45,6 +45,7 @@ p {
     color: #eee;
 }
 
+
 /* ---- Layout Rules ---- */
 main {
     margin: 10vh 1em 10vh;
@@ -72,6 +73,9 @@ section {
 
 .navbar__menu li {
     display: inline-block;
+    margin: 1.5%;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bold;
 }
 
 .navbar__menu .menu__link {
@@ -90,11 +94,12 @@ section {
 
 /* Header Styles */
 .page__header {
-    background: #fff;
+    background:transparent;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 5;
+    text-align: right;
 }
 
 /* Footer Styles */

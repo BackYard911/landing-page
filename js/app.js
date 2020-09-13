@@ -17,6 +17,7 @@
  * Define Global Variables
  * 
 */
+let ul = document.querySelector("ul");
 let doc = document.querySelector("document");
 let body = document.querySelector("h1");
 let sec1 = document.querySelector("#section1");
@@ -27,7 +28,12 @@ let mySection = [];
 for (const section of sections){
     mySection.push(section.firstElementChild.firstElementChild);
 }
-
+for (const section of mySection){
+    
+    let li = document.createElement('li');
+    li.innerHTML = section.innerHTML;
+    ul.appendChild(li);
+}
 function isInViewport(element) {
     const rect = element.getBoundingClientRect();
     return (
@@ -63,6 +69,8 @@ function updatePosition(){
 }
 
 window.addEventListener("scroll",updatePosition);
+
+
 
 /**
  * End Global Variables
