@@ -1,3 +1,4 @@
+//defining variables
 let count = 0;
 let topFlag = false;
 let ul = document.querySelector("ul");
@@ -14,7 +15,7 @@ for (const section of sections){
     mySection.push(section.firstElementChild.firstElementChild);
 }
 
-
+//adding the navigation items dynamically
 for (const section of mySection){
     
     let li = document.createElement('li');
@@ -25,6 +26,8 @@ for (const section of mySection){
     li.addEventListener("click",goToSection);
     ul.appendChild(li);
 }
+
+//checking if section is on screen
 function isInViewport(element) {
     const rect = element.getBoundingClientRect();
     return (
