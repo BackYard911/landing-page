@@ -17,6 +17,7 @@
  * Define Global Variables
  * 
 */
+let count = 0;
 let ul = document.querySelector("ul");
 let doc = document.querySelector("document");
 let body = document.querySelector("h1");
@@ -34,17 +35,24 @@ for (const section of mySection){
     let li = document.createElement('li');
     li.innerHTML = section.innerHTML;
     li.classList.add("menu__link");
+    li.counter = count;
+    count++;
+    li.addEventListener("click",goToSection);
     ul.appendChild(li);
 }
 function isInViewport(element) {
     const rect = element.getBoundingClientRect();
     return (
-        rect.bottom >= 0 //&&
+        rect.bottom-3 >= 0 //&&
 //        rect.left >= 0 &&
 //        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
 //        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
 
     );
+}
+
+function goToSection(event){
+    sections[event.target.counter].scrollIntoView({behavior : 'smooth'});
 }
 
 console.log(mySection);
