@@ -23,6 +23,7 @@ let body = document.querySelector("h1");
 let sec1 = document.querySelector("#section1");
 let sec2 = document.querySelector("#section2");
 let sec3 = document.querySelector("#section3");
+let sec4 = document.querySelector("#section4");
 let sections = document.querySelectorAll("section");
 let mySection = [];
 for (const section of sections){
@@ -38,33 +39,50 @@ for (const section of mySection){
 function isInViewport(element) {
     const rect = element.getBoundingClientRect();
     return (
-        rect.top >= 0 &&
-        rect.left >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        rect.bottom >= 0 //&&
+//        rect.left >= 0 &&
+//        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+//        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
 
     );
 }
 
 console.log(mySection);
 function updatePosition(){
-    if(isInViewport(mySection[0])){
+    if(isInViewport(sec1)){
         //add section1 to the header
+        sec1.classList.add("your-active-class");
+        sec2.classList.remove("your-active-class");
+        sec3.classList.remove("your-active-class");
+        sec4.classList.remove("your-active-class");
+        console.log("section1");
     }
-    else{
-        //remove section1 from the header
-    }
-    if(isInViewport(mySection[1])){
+
+    else if (isInViewport(sec2)){
         //add section2 to the header
+        sec1.classList.remove("your-active-class");
+        sec2.classList.add("your-active-class");
+        sec3.classList.remove("your-active-class");
+        sec4.classList.remove("your-active-class");
+        console.log("section2");
     }
-    else{
-        //remove section2 from the header
-    }
-    if(isInViewport(mySection[2])){
+    
+    else if(isInViewport(sec3)){
         //add section3 to the header
+        sec1.classList.remove("your-active-class");
+        sec2.classList.remove("your-active-class");
+        sec3.classList.add("your-active-class");
+        sec4.classList.remove("your-active-class");
+        console.log("section3");
     }
-    else{
-        //remove section3 from the header
+    
+    else if(isInViewport(sec4)){
+        //add section3 to the header
+        sec1.classList.remove("your-active-class");
+        sec2.classList.remove("your-active-class");
+        sec3.classList.remove("your-active-class");
+        sec4.classList.add("your-active-class");
+        console.log("section4");
     }
 
 }
