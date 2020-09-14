@@ -1,4 +1,5 @@
 let count = 0;
+let topFlag = false;
 let ul = document.querySelector("ul");
 let body = document.querySelector("html");
 let sec1 = document.querySelector("#section1");
@@ -36,7 +37,13 @@ function goToSection(event){
 }
 
 function goToTop(){
+    if(topFlag){
     body.scrollIntoView({behavior : 'smooth'});
+    btnTop.style.display = "none";
+    }
+    else{
+        btnTop.style.display = "block";
+    }
 }
 
 function updatePosition(){
@@ -67,7 +74,14 @@ function updatePosition(){
         sec3.classList.remove("your-active-class");
         sec4.classList.add("your-active-class");
     }
-    
+    if(window.scrollY == 0){
+        topFlag =false;
+        btnTop.style.display = "none";
+    }
+    else{
+        topFlag=true;
+        btnTop.style.display = "block";
+    }
 }
 
 window.addEventListener("scroll",updatePosition);
