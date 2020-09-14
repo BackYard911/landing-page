@@ -32,6 +32,7 @@ for (const section of mySection){
     
     let li = document.createElement('li');
     li.innerHTML = section.innerHTML;
+    li.classList.add("menu__link");
     ul.appendChild(li);
 }
 function isInViewport(element) {

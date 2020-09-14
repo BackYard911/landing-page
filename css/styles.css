@@ -79,17 +79,21 @@ section {
 }
 
 .navbar__menu .menu__link {
-    display: block;
+    
     padding: 1em;
     font-weight: bold;
     text-decoration: none;
-    color: #000;
+    color: #fff;
+    
 }
 
 .navbar__menu .menu__link:hover {
-    background: #333;
+    background:grey;
+    opacity: 0.5;
     color: #fff;
-    transition: ease 0.3s all;
+    transition: ease 0.69s all;
+    cursor: pointer;
+    
 }
 
 /* Header Styles */
@@ -99,7 +103,7 @@ section {
     top: 0;
     width: 100%;
     z-index: 5;
-    text-align: right;
+    
 }
 
 /* Footer Styles */
